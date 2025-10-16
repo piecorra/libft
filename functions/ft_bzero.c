@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: piero-pc <piero-pc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 22:46:28 by piecorra          #+#    #+#             */
-/*   Updated: 2025/10/16 18:30:31 by piero-pc         ###   ########.fr       */
+/*   Created: 2025/10/16 18:51:33 by piero-pc          #+#    #+#             */
+/*   Updated: 2025/10/16 18:55:55 by piero-pc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t count)
+void bzero(void *s, size_t n)
 {
     size_t  i;
-    unsigned int diff;
-    const unsigned char *s1_copy;
-    const unsigned char *s2_copy;
-    
-    if(n == 0)
-        return(0);
-    s1_copy = (const unsigned char *)s1;
-    s2_copy = (const unsigned char *)s2;
+
     i = 0;
-    
-    while (i < n && s1_copy[i] == s2_copy[i] && s1 != '\0' && s2 != '\0')
+    while(i < n)
     {
+        ((char *)s)[i] = 0;
         i++;
     }
-    if (i == n)
-        return(0);
-    return(s1_copy[i] - s2_copy[i]);
 }

@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: piero-pc <piero-pc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 22:46:28 by piecorra          #+#    #+#             */
-/*   Updated: 2025/10/16 18:30:31 by piero-pc         ###   ########.fr       */
+/*   Created: 2025/10/16 18:31:18 by piero-pc          #+#    #+#             */
+/*   Updated: 2025/10/16 18:48:49 by piero-pc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t count)
+void    *memset(void *str, int c, size_t n)
 {
+    unsigned char value;
     size_t  i;
-    unsigned int diff;
-    const unsigned char *s1_copy;
-    const unsigned char *s2_copy;
     
-    if(n == 0)
-        return(0);
-    s1_copy = (const unsigned char *)s1;
-    s2_copy = (const unsigned char *)s2;
+    value = str;
     i = 0;
-    
-    while (i < n && s1_copy[i] == s2_copy[i] && s1 != '\0' && s2 != '\0')
+    while(i < n)
     {
+        value[i] = str[i];
         i++;
     }
-    if (i == n)
-        return(0);
-    return(s1_copy[i] - s2_copy[i]);
+    return (str);
 }
